@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom scrollbar for hacker theme */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111827;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #22c55e;
+  border-radius: 4px;
+  box-shadow: 0 0 5px rgba(34, 197, 94, 0.5);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #16a34a;
+}
+
+/* Custom styles for Leaflet popups */
+.leaflet-popup-content-wrapper {
+  background: #111827 !important;
+  border: 2px solid #22c55e !important;
+  border-radius: 8px !important;
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.3) !important;
+}
+
+.leaflet-popup-tip {
+  background: #111827 !important;
+  border: 2px solid #22c55e !important;
+  box-shadow: 0 0 10px rgba(34, 197, 94, 0.3) !important;
+}
+
+.leaflet-popup-close-button {
+  color: #22c55e !important;
+  font-size: 18px !important;
+  font-weight: bold !important;
+}
+
+.leaflet-popup-close-button:hover {
+  color: #16a34a !important;
+  background: rgba(34, 197, 94, 0.1) !important;
+}
+
+/* Matrix-style text animation */
+@keyframes matrix-rain {
+  0% { transform: translateY(-100%); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateY(100vh); opacity: 0; }
+}
+
+.matrix-bg::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, transparent 0%, rgba(34, 197, 94, 0.05) 50%, transparent 100%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Glitch effect for headers */
+@keyframes glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+  100% { transform: translate(0); }
+}
+
+.glitch:hover {
+  animation: glitch 0.3s ease-in-out;
+}
+
+/* Terminal cursor blink */
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.cursor-blink {
+  animation: blink 1s infinite;
+}
+
+/* Neon glow effect */
+.neon-glow {
+  text-shadow: 0 0 5px #22c55e, 0 0 10px #22c55e, 0 0 15px #22c55e;
+}
+
+/* Circuit board pattern */
+body {
+  background-image: 
+    radial-gradient(circle at 1px 1px, rgba(34, 197, 94, 0.1) 1px, transparent 0);
+  background-size: 20px 20px;
+}
